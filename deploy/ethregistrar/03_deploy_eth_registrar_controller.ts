@@ -83,7 +83,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       ensAddress: (await ethers.getContract('ENSRegistry')).address,
     },
   )
-  const resolver = await provider.getResolver('mmxc')
+  const resolver = await provider.getResolver('mxc')
   if (resolver === null) {
     console.log(
       `No resolver set for .mxc; not setting interface ${interfaceId} for ETH Registrar Controller`,
