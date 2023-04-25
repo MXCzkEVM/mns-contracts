@@ -29,9 +29,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     log: true,
   }
 
-  console.log('args', deployArgs)
   const nameWrapper = await deploy('NameWrapper', deployArgs)
-  console.log('here 1')
+
   if (!nameWrapper.newlyDeployed) return
 
   if (owner !== deployer) {
@@ -42,9 +41,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     )
     await tx.wait()
   }
-  console.log('here 2')
-
-  console.log('test here')
 
   // Only attempt to make controller etc changes directly on testnets
   if (network.name === 'mainnet') return
@@ -89,6 +85,7 @@ func.dependencies = [
   'BaseRegistrarImplementation',
   'StaticMetadataService',
   'registry',
+  'ReverseRegistrar',
 ]
 
 export default func

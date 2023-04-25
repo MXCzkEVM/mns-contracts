@@ -17,7 +17,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     from: deployer,
     args: [registry.address],
     log: true,
-    contract: await deployments.getArtifact('PublicResolver_mainnet_9412610'),
+    contract: await deployments.getArtifact('PublicResolver'),
   })
 
   return true
