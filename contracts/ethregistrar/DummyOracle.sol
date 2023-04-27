@@ -6,7 +6,7 @@ contract DummyOracle is Controllable {
     int256 value;
 
     constructor(int256 _value) public {
-        set(_value);
+        value = _value;
     }
 
     function set(int256 _value) public onlyController {
