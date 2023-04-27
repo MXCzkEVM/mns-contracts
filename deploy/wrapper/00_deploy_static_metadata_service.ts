@@ -13,7 +13,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     metadataHost = 'http://localhost:8080'
   }
 
-  const metadataUrl = `${metadataHost}/name/0x{id}`
+  const metadataUrl = `${metadataHost}`
 
   await deploy('StaticMetadataService', {
     from: deployer,

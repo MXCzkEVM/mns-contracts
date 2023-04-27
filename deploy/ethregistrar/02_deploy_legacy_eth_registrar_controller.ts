@@ -1,4 +1,4 @@
-import { ethers } from 'hardhat'
+import { ethers, network } from 'hardhat'
 import { DeployFunction } from 'hardhat-deploy/types'
 import { HardhatRuntimeEnvironment } from 'hardhat/types'
 
@@ -7,6 +7,9 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { deploy, run } = deployments
   const { deployer, owner } = await getNamedAccounts()
 
+  if (!network.tags.legacy) {
+    return
+  }
   const registrar = await ethers.getContract(
     'BaseRegistrarImplementation',
     owner,

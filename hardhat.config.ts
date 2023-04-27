@@ -41,7 +41,7 @@ const config: HardhatUserConfig = {
   networks: {
     mxc_testnet: {
       url: process.env.MXC_TESTNET_URL,
-      tags: ['test', 'legacy', 'use_root'],
+      tags: ['use_root'],
       chainId: 5167003,
       accounts: real_accounts,
     },

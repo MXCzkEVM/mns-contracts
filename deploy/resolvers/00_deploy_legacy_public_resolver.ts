@@ -17,14 +17,14 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     from: deployer,
     args: [registry.address],
     log: true,
-    contract: await deployments.getArtifact('PublicResolver'),
+    contract: await deployments.getArtifact('PublicResolver_mainnet_9412610'),
   })
 
   return true
 }
 
 func.id = 'legacy-resolver'
-func.tags = ['resolvers', 'LegacyPublicResolver']
+func.tags = ['resolvers', 'LegacyPublicResolver', 'legacy']
 func.dependencies = ['registry', 'wrapper']
 
 export default func
