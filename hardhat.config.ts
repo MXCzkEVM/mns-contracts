@@ -39,8 +39,8 @@ export const archivedDeploymentPath = './deployments/archive'
 
 const config: HardhatUserConfig = {
   networks: {
-    mxc_testnet: {
-      url: process.env.MXC_TESTNET_URL,
+    mxc_wannsee: {
+      url: process.env.MXC_WANNSEE_URL,
       tags: ['test', 'use_root'],
       chainId: 5167003,
       accounts: real_accounts,
