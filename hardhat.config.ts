@@ -39,10 +39,10 @@ export const archivedDeploymentPath = './deployments/archive'
 
 const config: HardhatUserConfig = {
   networks: {
-    mxc_wannsee: {
-      url: process.env.MXC_WANNSEE_URL,
+     geneva: {
+      url: "https://geneva-rpc.moonchain.com",
       tags: ['test', 'use_root'],
-      chainId: 5167003,
+      chainId: 5167004,
       accounts: real_accounts,
     },
     mxc: {
